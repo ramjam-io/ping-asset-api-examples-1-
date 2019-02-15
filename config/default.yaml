@@ -1,0 +1,9 @@
+pingasset:
+  api: https://api.pingasset.com/v1/
+  oauth2:
+    client:
+    secret:
+    endpoints:
+      host: https://api.pingasset.com
+      token: /auth/token/
+      auth: /auth/authorize/
