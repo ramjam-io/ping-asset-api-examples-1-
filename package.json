@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec babel-node src/",
     "build": "babel src --out-dir ./dist",
-    "start": "",
+    "start": "npm run build && node dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -30,6 +30,8 @@
     "esversion": 6
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "pug": "^2.0.3"
   }
 }

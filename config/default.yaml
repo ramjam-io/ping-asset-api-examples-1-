@@ -1,8 +1,11 @@
+name: Ping Asset API Example
+version: 0.0.1
+port: 3000
 pingasset:
   api: https://api.pingasset.com/v1/
   oauth2:
-    client:
-    secret:
+    client: 
+    secret: 
     endpoints:
       host: https://api.pingasset.com
       token: /auth/token/
