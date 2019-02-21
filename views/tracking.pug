@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  div.container
+    h1 Tracking information for device #{imei}
+    if result.count > 0
+      p #{result.count} events found.
+      table.table.table-hover.table-striped.table-bordered
+        thead
+          tr 
+            th Event Time (UTC)
+            th Event Sequence
+            th Event Type
+            th Temp (C)
+            th Temp (F)
+            th Battery
+            th Longitude
+            th Latitude
+            th Located With
+        tbody
+        each event, i in result.results
+          tr
+            td #{event.timestamp}
+            td #{event.sequence}
+            td #{event.event_type}
+            td #{event.sensors.temperature}
+            <!-- Optional, convert to F -->
+            td #{(event.sensors.temperature * 9 / 5 + 32)}
+            td #{event.sensors.battery}
+            if event.location.primary
+              if event.location.primary.longitude
+                td #{event.location.primary.longitude}
+              else 
+                td N/A
+              if event.location.primary.latitude
+                td #{event.location.primary.latitude}
+              else
+                td N/A
+              if event.location.located_with
+                td #{event.location.located_with}
+              else
+                td N/A
+            else
+              td N/A
+              td N/A
+              td N/A
+    else
+      div.alert.alert-primary No tracking information found.
