@@ -32,6 +32,6 @@
   "dependencies": {
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   }
 }
